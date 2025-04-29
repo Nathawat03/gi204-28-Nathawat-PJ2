@@ -9,5 +9,6 @@ public class Timer : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
         timerText.text = elapsedTime.ToString("00:00");
-    }
-}
+    } //Update
+    
+}// Timer
