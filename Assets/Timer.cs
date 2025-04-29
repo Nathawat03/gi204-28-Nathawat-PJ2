@@ -8,6 +8,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        timerText.text = elapsedTime.ToString("0.00");
+        timerText.text = elapsedTime.ToString("00:00");
     }
 }
