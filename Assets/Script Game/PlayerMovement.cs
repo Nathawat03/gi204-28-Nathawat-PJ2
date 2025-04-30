@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -37,7 +38,17 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-        }
+        } // Collision Ground
+
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit!!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reset Game
+            print("Reset Game");
+            
+        } // Collision Obstacle hit to Reset Game.
+        
+        
     }//OnCollisionEnter2D
 
 
@@ -48,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
         }
+        
+        
     }//OnCollisionExit2D
+    
 
 }//PlayerMovement
