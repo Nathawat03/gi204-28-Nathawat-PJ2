@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveInput;
     private Rigidbody2D rb2d;
+    
+    
 
     void Start()
     {
@@ -50,8 +53,7 @@ public class PlayerMovement : MonoBehaviour
         
         
     }//OnCollisionEnter2D
-
-
+    
     // เมื่อตัวละครออกจากพื้น
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -62,6 +64,21 @@ public class PlayerMovement : MonoBehaviour
         
         
     }//OnCollisionExit2D
-    
 
+   
+    public int Gemspoint = 0;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Gems"))
+        {
+            Debug.Log("Trigger!!");
+            Destroy(other.gameObject);
+            Gemspoint++;
+            Debug.Log($"Gemspoint: {Gemspoint}");
+        }
+        
+    }//OnTriggerEnter2D Gems Points
+    
+    
+    
 }//PlayerMovement
