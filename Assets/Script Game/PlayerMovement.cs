@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveInput;
     private Rigidbody2D rb2d;
-    
-    
+
+    public ScoreManager sm;
 
     void Start()
     {
@@ -66,15 +66,16 @@ public class PlayerMovement : MonoBehaviour
     }//OnCollisionExit2D
 
    
-    public int Gemspoint = 0;
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Gems"))
         {
+            
             Debug.Log("Trigger!!");
             Destroy(other.gameObject);
-            Gemspoint++;
-            Debug.Log($"Gemspoint: {Gemspoint}");
+            sm.ScoreCount++;
+            
         }
         
     }//OnTriggerEnter2D Gems Points
