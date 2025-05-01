@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
     }// Start
-
-  
+    
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
@@ -33,8 +32,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }// Update
-
-
+    
     // เมื่อตัวละครสัมผัสพื้น
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -43,14 +41,13 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         } // Collision Ground
 
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Not"))
         {
             Debug.Log("Hit!!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reset Game
             print("Reset Game");
             
         } // Collision Obstacle hit to Reset Game.
-        
         
     }//OnCollisionEnter2D
     
@@ -62,10 +59,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
         
-        
     }//OnCollisionExit2D
-
-   
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -79,7 +73,5 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }//OnTriggerEnter2D Gems Points
-    
-    
     
 }//PlayerMovement
