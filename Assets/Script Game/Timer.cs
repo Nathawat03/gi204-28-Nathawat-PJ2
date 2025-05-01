@@ -10,7 +10,10 @@ public class Timer : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        timerText.text = elapsedTime.ToString("00:00");
-    } //Update
+        int minutes = (int)elapsedTime / 60; 
+        int seconds = (int)elapsedTime % 60;
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
+    } //Update Timer
     
 }// Timer
