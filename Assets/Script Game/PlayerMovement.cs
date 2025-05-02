@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     private Rigidbody2D rb2d;
 
-    public ScoreManager sm;
-
+    [SerializeField] private ScoreManager sm;
+    
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
