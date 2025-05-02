@@ -70,8 +70,11 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
             sm.ScoreCount++;
             
-        }
+        } // CompareTag("Gems")
+
         
     }//OnTriggerEnter2D Gems Points
+    
+    
     
 }//PlayerMovement
