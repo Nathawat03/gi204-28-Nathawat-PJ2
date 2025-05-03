@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HitShoot : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class HitShoot : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            
             Debug.Log("HIT!!");
             Destroy(other.gameObject);
         }

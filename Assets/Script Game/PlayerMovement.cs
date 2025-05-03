@@ -49,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
             
         } // Collision Obstacle hit to Reset Game.
         
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reset Game
+            
+        } // CompareTag("Obstacle")
+        
     }//OnCollisionEnter2D
     
     // เมื่อตัวละครออกจากพื้น
@@ -71,9 +77,9 @@ public class PlayerMovement : MonoBehaviour
             sm.ScoreCount++;
             
         } // CompareTag("Gems")
-
         
     }//OnTriggerEnter2D Gems Points
+    
     
     
     
